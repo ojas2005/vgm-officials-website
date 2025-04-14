@@ -1,0 +1,46 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import Roster from './pages/Roster';
+import YouTube from './pages/YouTube';
+import Instagram from './pages/Instagram';
+import Discord from './pages/Discord';
+
+function App() {
+  return (
+    <Router>
+      <div className="app">
+        <nav className="navbar">
+          <div className="logo">VGM OFFICIALS</div>
+          <ul className="nav-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/roster">Roster</Link></li>
+            <li><Link to="/youtube">YouTube</Link></li>
+            <li><Link to="/instagram">Instagram</Link></li>
+            <li><Link to="/discord">Discord</Link></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/roster" element={<Roster />} />
+          <Route path="/youtube" element={<YouTube />} />
+          <Route path="/instagram" element={<Instagram />} />
+          <Route path="/discord" element={<Discord />} />
+        </Routes>
+
+        <footer className="footer">
+          <p>&copy; {new Date().getFullYear()} VGM OFFICIALS. All rights reserved.</p>
+          <div className="socials">
+            <a href="https://instagram.com/vgmofficials" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://youtube.com/@vgmofficials" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://discord.gg/vgmofficials" target="_blank" rel="noopener noreferrer">Discord</a>
+          </div>
+        </footer>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

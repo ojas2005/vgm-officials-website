@@ -1,0 +1,55 @@
+.roster-page {
+    padding: 40px;
+    background-color: #121212;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .roster-page h2 {
+    text-align: center;
+    color: #ff2e2e;
+    margin-bottom: 40px;
+  }
+  
+  .player-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .player-card {
+    background-color: #1f1f1f;
+    border: 2px solid #ff2e2e;
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .player-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .player-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .player-card h3 {
+    margin: 10px 0 5px;
+    color: #ffffff;
+  }
+  
+  .player-card .role {
+    color: #ff2e2e;
+    font-weight: bold;
+  }
+  
+  .player-card .intro {
+    font-size: 0.9rem;
+    color: #cccccc;
+  }
+  
