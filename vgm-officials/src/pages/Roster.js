@@ -16,27 +16,22 @@ const players = [
   {
     name: 'VARUN',
     role: 'Support + Assaulter',
-    image: 'https://via.placeholder.com/150',
+    image: '/assets/varun.png',
     intro: 'Reliable support and a deadly assaulter.'
   },
   {
     name: 'MASTER',
     role: 'Freeman + Filter',
-    image: 'https://via.placeholder.com/150',
+    image: '/assets/master.png',
     intro: 'Handles multiple roles with fluid playstyle.'
   },
   {
     name: 'VEDU',
     role: 'Assaulter',
-    image: 'https://via.placeholder.com/150',
+    image: '/assets/vedu.png',
     intro: 'Precision and power in every fight.'
   },
-  {
-    name: 'DEMON',
-    role: 'Sniper + Scout',
-    image: 'https://via.placeholder.com/150',
-    intro: 'Sharp eyes, sharp aim — our sniper.'
-  }
+  
 ];
 
 function Roster() {

@@ -5,6 +5,7 @@ import Roster from './pages/Roster';
 import YouTube from './pages/YouTube';
 import Instagram from './pages/Instagram';
 import Discord from './pages/Discord';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <li><Link to="/youtube">YouTube</Link></li>
             <li><Link to="/instagram">Instagram</Link></li>
             <li><Link to="/discord">Discord</Link></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/contact">Contact Us</Link></li> {/* Corrected Link */}
           </ul>
         </nav>
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/youtube" element={<YouTube />} />
           <Route path="/instagram" element={<Instagram />} />
           <Route path="/discord" element={<Discord />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
 
         <footer className="footer">

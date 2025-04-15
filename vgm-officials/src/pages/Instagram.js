@@ -1,12 +1,11 @@
 function Instagram() {
     const handles = [
       { name: 'VGM OFFICIALS', url: 'https://instagram.com/vgmofficials' },
-      { name: 'INSANE', url: 'https://instagram.com/insane' },
+      { name: 'INSANE', url: 'https://instagram.com/VGMxINSANE' },
       { name: 'TNTGOD', url: 'https://instagram.com/tntgod' },
-      { name: 'VARUN', url: 'https://instagram.com/varun' },
+      { name: 'VARUN', url: 'https://www.instagram.com/varunbgmi8?igsh=MWNnbnBoc2JiYWpzZg%3D%3D&utm_source=qr' },
       { name: 'MASTER', url: 'https://instagram.com/master' },
       { name: 'VEDU', url: 'https://instagram.com/vedu' },
-      { name: 'DEMON', url: 'https://instagram.com/demon' },
     ];
   
     return (
