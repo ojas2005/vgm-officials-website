@@ -6,7 +6,7 @@ function YouTube() {
     { name: 'TNTGOD', url: 'https://youtube.com/@TNTGOD', image: '/path-to-image2.jpg' },
     { name: 'VARUN', url: 'https://www.youtube.com/@VarunBGMi5', image: '/assets/varunLOGO.jpeg'},
     { name: 'MASTER', url: 'https://www.youtube.com/@ngumaster17', image: '/assets/masterLOGO.jpeg' },
-    { name: 'VEDU', url: 'https://youtube.com/@VEDU', image: '/path-to-image5.jpg' },
+    { name: 'VEDU', url: 'https://youtube.com/@v___playzz?si=H6xWUIoXW7xsFz9R', image: '/assets/vedulogo2.jpeg' },
   ];
 
   return (

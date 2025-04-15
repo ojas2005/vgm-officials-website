@@ -12,7 +12,12 @@ function App() {
     <Router>
       <div className="app">
         <nav className="navbar">
-          <div className="logo">VGM OFFICIALS</div>
+        <Link to="/" className="logo" onClick={() => window.location.reload()}>
+    VGM OFFICIALS
+  </Link>
+  <ul className="nav-links">
+    {/* other links */}
+  </ul>
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/roster">Roster</Link></li>
