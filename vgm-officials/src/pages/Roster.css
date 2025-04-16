@@ -2,7 +2,7 @@
     padding: 40px;
     background-color: #121212;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif ;
   }
   
   .roster-page h2 {
@@ -51,5 +51,22 @@
   .player-card .intro {
     font-size: 0.9rem;
     color: #cccccc;
+  }
+  .intro {
+    font-size: 0.85rem;
+    color: #cccccc;
+    margin-top: 10px;
+    text-align: left;
+    background: rgba(255, 46, 46, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .intro span {
+    font-weight: bold;
+    color: #ff2e2e;
+    display: inline-block;
+    min-width: 70px;
   }
   

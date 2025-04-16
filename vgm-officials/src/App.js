@@ -9,10 +9,12 @@ import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
+    
     <Router>
       <div className="app">
+      
         <nav className="navbar">
-        <Link to="/" className="logo" onClick={() => window.location.reload()}>
+        <Link to="/" className="logo">
     VGM OFFICIALS
   </Link>
   <ul className="nav-links">
@@ -51,3 +53,5 @@ function App() {
 }
 
 export default App;
+
+// App.js or Layout.js
