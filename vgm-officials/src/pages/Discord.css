@@ -1,0 +1,218 @@
+.discord-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--dark-bg), #1a0a1f);
+  }
+  
+  .particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .discord-content {
+    position: relative;
+    z-index: 2;
+    padding: 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .discord-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+  }
+  
+  .discord-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .discord-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Discord Features */
+  .discord-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 4rem;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 45, 85, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--primary), #ff5555);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .feature-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+  
+  /* Discord Join */
+  .discord-join {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .join-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary), #ff5555);
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(255, 45, 85, 0.5);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .join-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 45, 85, 0.7);
+  }
+  
+  .join-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .discord-members {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .member-avatars {
+    display: flex;
+  }
+  
+  .member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark-surface-2);
+    border: 2px solid var(--primary);
+    margin-right: -10px;
+    background-image: url("/public/assets/masterLOGO.jpeg");
+    background-size: cover;
+  }
+  
+  .member-avatar:nth-child(2) {
+    background-image: url("/public/assets/InsaneLOGO.jpeg");
+    z-index: 2;
+  }
+  
+  .member-avatar:nth-child(3) {
+    background-image: url("/public/assets/varunLOGO.jpeg");
+    z-index: 3;
+  }
+  
+  .member-avatar:nth-child(4) {
+    background-image: url("/public/assets/vedulogo1.jpeg");
+    z-index: 4;
+  }
+  
+  .discord-members p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+  
+  .discord-members p strong {
+    color: var(--primary);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .discord-header h1 {
+      font-size: 2.5rem;
+    }
+  
+    .discord-features {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .discord-header h1 {
+      font-size: 2rem;
+    }
+  
+    .join-button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  }
+  

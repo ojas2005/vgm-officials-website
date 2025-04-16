@@ -1,298 +1,368 @@
-/* App general */
-body{
-  font-family: 'Black Ops One', cursive;
-  background-color: #0f0c29;
-  color: white;
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #ff2d55;
+  --primary-hover: #ff0a3c;
+  --primary-glow: rgba(255, 45, 85, 0.5);
+  --secondary: #0cffe1;
+  --secondary-glow: rgba(12, 255, 225, 0.5);
+  --dark-bg: #0a0a14;
+  --dark-surface: #12121f;
+  --dark-surface-2: #1a1a2e;
+  --text: #ffffff;
+  --text-secondary: #b8b8d0;
+  --border-radius: 8px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-
-.home-page {
-  font-family: 'Black Ops One', cursive;
+body {
+  font-family: "Rajdhani", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-
-  
-
-/* === Navbar Styles === */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0d0d0d;
-  padding: 15px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ca3535;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px #ff1a1a;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 3px;
-  background: #ff1a1a;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::before {
-  width: 100%;
-}
-
-.nav-links a:hover {
-  color: #ff1a1a;
-}
-
-/* Optional: Add active route highlight */
-.nav-links a.active {
-  color: #ff1a1a;
-  font-weight: bold;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-  }
-}
-
-
-/* App.css */
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #121212; /* You can replace this with a lighter color if needed */
-  color: white;
 }
 
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 45, 85, 0.2);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 0.7rem 5%;
+  background: rgba(10, 10, 20, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.logo-text {
+  color: var(--text);
+  margin-right: 5px;
+}
+
+.logo-highlight {
+  color: var(--primary);
+  position: relative;
+}
+
+.logo-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: translateX(-50%);
+  transition: var(--transition);
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+.nav-links li a:hover::before {
+  width: 70%;
+}
+
+.contact-btn {
+  background: linear-gradient(45deg, var(--primary), #ff5555);
+  color: white !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 50px !important;
+  box-shadow: 0 0 15px rgba(255, 45, 85, 0.4);
+  transition: var(--transition);
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(255, 45, 85, 0.6);
+}
+
+.contact-btn::before {
+  display: none !important;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== FOOTER ===== */
 .footer {
-  margin-top: auto;
-  background-color: #1a1a1a;
-  color: white;
-  padding-bottom: 135px;
-  text-align: center;
-  border-top: 2px solid red;
-}
-
-.footer .socials a {
-  color: red;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.footer .socials a:hover {
-  text-decoration: underline;
-}
-
-.youtube-page {
-  padding: 40px 20px;
-  background: linear-gradient(to right, #000000, #1a1a1a); /* gaming gradient */
-  min-height: 100vh;
-  color: #fff;
-  text-align: center;
-}
-
-.youtube-page h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #ff4757;
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-  justify-items: center;
-}
-
-.card {
-  background: #1e1e2f;
-  border: 2px solid #444;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(255, 71, 87, 0.3);
-  border-color: #ff4757;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 2px solid #333;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.card-content h3 {
-  margin: 10px 0;
-  font-size: 1.4rem;
-  color: #ff6b81;
-}
-
-.card-content a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  color: #fff;
-  background: #ff4757;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.card-content a:hover {
-  background: #e84118;
-}
-
-
-.discord-page {
+  background: linear-gradient(to top, var(--dark-bg), rgba(10, 10, 20, 0.9));
+  border-top: 1px solid rgba(255, 45, 85, 0.3);
+  padding: 3rem 5% 1.5rem;
   position: relative;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo .logo-text,
+.footer-logo .logo-highlight {
+  font-size: 1.8rem;
+}
+
+.footer-tagline {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.footer-links,
+.footer-socials {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h3,
+.footer-socials h3 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-links h3::after,
+.footer-socials h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--secondary);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-links ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  color: white;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
+}
+
+.footer-bottom {
   text-align: center;
-  overflow: hidden;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
-.discord-page::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-}
-
-.discord-page h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #ff3b3b;
-  margin-bottom: 1rem;
-  z-index: 1;
-  animation: fadeInDown 1s ease-out;
-}
-
-.discord-page p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  color: #e0e0e0;
-  z-index: 1;
-  animation: fadeInUp 1.2s ease-out;
-}
-
-.discord-page a {
-  position: relative;
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background-color: #ff3b3b;
-  color: white;
-  font-weight: bold;
-  border-radius: 2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  z-index: 1;
-  box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
-}
-
-.discord-page a:hover {
-  transform: scale(1.05);
-  background-color: #e63232;
-  box-shadow: 0 0 20px rgba(255, 59, 59, 0.7);
-}
-
-.discord-page a::after {
-  content: "🔥";
-  position: absolute;
-  top: -10px;
-  right: -15px;
-  background: white;
-  color: #ff3b3b;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 9999px;
-  animation: bounce 1s infinite;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
-@keyframes fadeInUp {
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    background: rgba(18, 18, 31, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 5rem 2rem;
+    transition: 0.5s ease;
+    z-index: 999;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links li a:hover {
+    background: rgba(255, 45, 85, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    width: 85%;
+  }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -303,106 +373,6 @@ body{
   }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+.main-content > div {
+  animation: fadeIn 0.5s ease forwards;
 }
-
-.contact-page {
-  position: relative;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-}
-
-.contact-page::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 0;
-}
-
-.contact-page h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #ff3b3b;
-  margin-bottom: 1rem;
-  z-index: 1;
-  animation: fadeInDown 1s ease-out;
-}
-
-.contact-page p {
-  font-size: 1.2rem;
-  color: #e0e0e0;
-  margin-bottom: 2rem;
-  z-index: 1;
-  animation: fadeInUp 1.2s ease-out;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  z-index: 1;
-}
-
-.contact-card {
-  background-color: rgba(255, 59, 59, 0.9);
-  padding: 1rem 2rem;
-  border-radius: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
-  backdrop-filter: blur(5px);
-  border: 2px solid transparent;
-  position: relative;
-}
-
-.contact-card:hover {
-  background-color: rgba(255, 59, 59, 1);
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 59, 59, 0.8);
-  border-color: white;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/*body css */
