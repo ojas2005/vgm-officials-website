@@ -52,9 +52,9 @@ function Instagram() {
     },
     {
       name: "TNTGOD",
-      username: "@tntgod",
-      url: "https://instagram.com/tntgod",
-      image: "/placeholder.svg?height=300&width=300",
+      username: "@vgm_tntgod_",
+      url: "https://www.instagram.com/vgm_tntgod_?igsh=MXZjYzZ4cGVnc2xxbg==",
+      image: "/assets/tntlogo1.jpeg",
       followers: "100+",
       posts: [
         {

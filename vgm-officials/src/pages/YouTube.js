@@ -29,9 +29,9 @@ const channels = [
   },
   {
     name: "TNTGOD",
-    url: "https://youtube.com/@TNTGOD",
-    image: "/placeholder.svg?height=300&width=300",
-    subscribers: "8K+",
+    url: "https://youtube.com/@tasukete69?si=tgCCBNh_wFy4_ArR",
+    image: "/assets/tntlogo2.jpeg",
+    subscribers: "0+",
     videos: [
       {
         title: "BGMI Solo vs Squad - 25 Kills Gameplay",

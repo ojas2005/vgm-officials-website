@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Instagram, Send, MessageSquare, CheckCircle } from "lucide-react"
+import { Mail, Instagram, Send, MessageSquare } from "lucide-react"
 import "./ContactUs.css"
 
 function ContactUs() {
@@ -13,6 +13,7 @@ function ContactUs() {
   })
 
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,18 +23,37 @@ function ContactUs() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Simulate form submission
-    setTimeout(() => {
-      setFormSubmitted(true)
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
-    }, 1000)
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setFormSubmitted(true)
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+        window.alert("Message sent successfully!")
+      } else {
+        console.error(data.error)
+        setErrorMessage("Failed to send message. Please try again.")
+      }
+    } catch (err) {
+      console.error("Error:", err)
+      setErrorMessage("Something went wrong. Please try again later.")
+    }
   }
 
   return (
@@ -112,16 +132,7 @@ function ContactUs() {
         </div>
 
         <div className="contact-form-container">
-          {formSubmitted ? (
-            <div className="form-success">
-              <CheckCircle size={50} />
-              <h2>Message Sent!</h2>
-              <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
-              <button onClick={() => setFormSubmitted(false)} className="reset-btn">
-                Send Another Message
-              </button>
-            </div>
-          ) : (
+          {!formSubmitted && (
             <>
               <h2>Send Us a Message</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -158,6 +169,8 @@ function ContactUs() {
                     required
                   ></textarea>
                 </div>
+
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
 
                 <button type="submit" className="submit-btn">
                   <Send size={16} />
