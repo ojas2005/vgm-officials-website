@@ -113,27 +113,6 @@ function Instagram() {
         },
       ],
     },
-    {
-      name: "VEDU",
-      username: "@itz.vedanttt.10",
-      url: "https://www.instagram.com/itz.vedanttt.10",
-      image: "assets/vedulogo1.jpeg",
-      followers: "1K+",
-      posts: [
-        {
-          image: "/placeholder.svg?height=300&width=300",
-          likes: "230",
-          comments: "18",
-          caption: "Newest member of VGM OFFICIALS! Ready to make my mark 🎯 #VGMVedu",
-        },
-        {
-          image: "/placeholder.svg?height=300&width=300",
-          likes: "210",
-          comments: "15",
-          caption: "First tournament with the team was an amazing experience! More to come!",
-        },
-      ],
-    },
   ]
 
   useEffect(() => {

@@ -93,28 +93,6 @@ const channels = [
       },
     ],
   },
-  {
-    name: "VEDU",
-    url: "https://youtube.com/@v___playzz?si=H6xWUIoXW7xsFz9R",
-    image: "/assets/vedulogo2.jpeg",
-    subscribers: "106+",
-    videos: [
-      {
-        title: "My First Tournament with VGM OFFICIALS",
-        thumbnail: "/placeholder.svg?height=180&width=320",
-        views: "9.5K",
-        likes: "1.5K",
-        duration: "11:20",
-      },
-      {
-        title: "Day in the Life of a Pro BGMI Player",
-        thumbnail: "/placeholder.svg?height=180&width=320",
-        views: "6.8K",
-        likes: "950",
-        duration: "09:15",
-      },
-    ],
-  },
 ]
 
 function YouTube() {

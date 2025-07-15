@@ -49,17 +49,6 @@ const players = [
     experience: "3.5 years",
     achievements: ["Noida Lan #1", "Mathura LAN #1", "BGIS R2 (2025)","Jaipur Lan #3"],
   },
-  {
-    name: "VEDU",
-    role: "Assaulter",
-    image: "/assets/vedu.png",
-    intro:
-      "The fresh blood in our squad, bringing new energy and lethal precision. As our newest member, he is quickly proving to be a force to be reckoned with, ready to make his mark and elevate the team`s performance.",
-    device: "iPhone 16 Pro",
-    age: 20,
-    experience: "4 years",
-    achievements: ["Noida Lan #1", "Mathura LAN #1", "BGIS R2 (2025)"],
-  },
 ]
 
 function Roster() {

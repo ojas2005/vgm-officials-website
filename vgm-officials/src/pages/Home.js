@@ -129,8 +129,8 @@ function Home() {
               <div className="achievement-image">
               <img src="/assets/achievement3.jpg" alt="Achievement 3" />
                 <div className="achievement-overlay">
-                  <h3>Greater Noida LAN #1</h3>
-                  <p>Venue: Shiv Nadar University</p>
+                  <h3>Mathura LAN #1</h3>
+                  <p>Venue: GLA University</p>
                 </div>
               </div>
             </div>
@@ -148,8 +148,8 @@ function Home() {
               <div className="achievement-image">
               <img src="/assets/achievement2.jpg" alt="Achievement 2" />
                 <div className="achievement-overlay">
-                  <h3>Chandigarh LAN #2</h3>
-                  <p>Venue: Chandigarh University</p>
+                  <h3>Noida LAN #1</h3>
+                  <p>Venue: Shiv Nadar University</p>
                 </div>
               </div>
             </div>

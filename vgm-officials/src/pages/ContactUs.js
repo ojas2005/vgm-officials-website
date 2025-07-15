@@ -67,7 +67,7 @@ function ContactUs() {
 
       <div className="contact-container">
         <div className="contact-info">
-          <h2>Connect With Us</h2>
+          <h2>For Tryouts/Sponsorship,Connect With Us</h2>
 
           <div className="contact-methods">
             <a href="mailto:vgmofficials@gmail.com" className="contact-method">
@@ -202,14 +202,14 @@ function ContactUs() {
           </div>
 
           <div className="faq-item">
-            <h3>Can we arrange a scrim with your team?</h3>
-            <p>We're always looking for practice opportunities. Reach out via email or Discord to schedule a scrim.</p>
+            <h3>Can we give tryouts in your team?</h3>
+            <p>You can share your details via mail or message box,We will contact you when we will recruit players.</p>
           </div>
 
           <div className="faq-item">
             <h3>Do you have sponsorship opportunities?</h3>
             <p>
-              We're open to sponsorship and partnership opportunities. Please contact our owner directly to discuss
+              We're open to sponsorship and partnership opportunities. Please contact our owner directly or fill the message form to discuss
               potential collaborations.
             </p>
           </div>
